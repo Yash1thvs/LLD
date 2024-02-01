@@ -10,12 +10,6 @@ public class Flutter {
     }
 
     public UIFactory createUIFactory(SupportedPlatforms params){
-//        init commit
-        if(params.equals(SupportedPlatforms.ANDROID)){
-            return new AndroidUIFactory();
-        } else if (params.equals(SupportedPlatforms.IOS)) {
-            return new IosUIFactory();
-        }
-        return null;
+        return UIFactoryFactory.getUIFactoryFromPlatform(params);
     }
 }
